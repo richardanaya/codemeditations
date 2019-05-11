@@ -1,0 +1,220 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=320, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:200,400,600"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.png" sizes="16x16" type="image/png" />
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="../index.css" />
+    <title>Code Meditations</title>
+  </head>
+  <body>
+    <div class="content">
+      <h1>VIM: All roads lead to CLI</h1>
+      <h2>Observations on text editors, code, and operating systems</h2>
+      <h3><a href="http://www.richardanaya.com/">Richard Anaya</a></h3>
+      <p>
+        Working with UNIX&trade;-like operating systems tends to encourage
+        similar behavior in it's users. In contrast to highly specialized GUI
+        applications, these systems incentivize CLI application use by allowing
+        the collaboration of processes via files and piping of text data from
+        one to another. It's this environment that most often brings many
+        developers into their beloved terminal of choice, taking advantage of a
+        certain conformity of interface in working with CLI commands via command
+        flags and options and symbols denoting their flow.
+      </p>
+      <p>
+        Despite this penchant many developers like myself have for our command
+        line friends, many still find it hard to escape one class of application
+        in particular - the IDE/code editor. There's a certain thrill of power
+        that these applications give us developers. Making huge refactorings
+        through handfuls of files, giving deep introspection at a hover of a
+        mouse, realtime code analysis.
+      </p>
+      <p>
+        I used to be a diehard Resharper user in a certain part of my life, at
+        this time, C# was my bread and butter, and I loved having this tool.
+        While I was selling my soul to Microsoft&trade; each day though, I was
+        jumping into explorations of dynamic languages like Python and
+        Javascript at night. I remember needing tools for these alternative
+        languages and found myself looking into tools like Notepad++, Sublime,
+        and eventually Atom. I became convinced of the power of tools like this
+        not just in making my life easier, but making explorations into
+        non-mainstream technology easier to do even if they weren't perfect. One
+        day I don't quite remember, I just stopped using Visual Studio. It
+        wasn't that is was bad, or not usable, it's just that the collaboration
+        of many people on an editor meant I was not as locked down by operating
+        system or interest. It wasn't perfect, and many times for the sake of a
+        debugging an issue a unit test couldn't identify or some specialized
+        functionality I had to return to IDEs.
+      </p>
+      <p>
+        For years after using Atom, I came to realize that there's really not
+        much a good editor needs to help you be efficient at a human level pace.
+      </p>
+      <ul>
+        <li>
+          Autocompletion doesn't need to be language specific (though its nice),
+          just auto completing identifiers is incredibly useful
+        </li>
+        <li>Syntax highlighting shows obvious structure bugs</li>
+        <li>
+          Finding files by filename and searching by text is sufficient for
+          getting around assuming you have good names in your code
+        </li>
+        <li>
+          Commandline code formatters/checkers work better for team
+          collaboration
+        </li>
+        <li>Responsive editors really do make psychological differences</li>
+        <li>
+          Open source packages lead to
+          <a href="https://atom.io/packages/activate-power-mode">fun ideas</a>
+        </li>
+      </ul>
+      <p>
+        Let me say breifly before this next part I have nothing against someone
+        who needs to use a tool for a functionality that can be acheived no
+        other way. But i've begun to have this feeling:
+      </p>
+      <blockquote>
+        GUI text editors are fundamentally at odds with the spirit of
+        UNIX&trade;
+      </blockquote>
+      <p>
+        I offer that these tools are encouraging us not to think of our projects
+        a commanded flows of text information. My most concerning observances
+        are as follows:
+      </p>
+      <ul>
+        <li>
+          The recreation of terminal emulators inside of GUI editors to make up
+          for a problem of attention jumping back and forth several windows
+        </li>
+        <li>
+          The recreation of wheels (to inefficient alternatives) to satify
+          non-UNIX&trade; platforms
+        </li>
+        <li>
+          IDE specific configuration files creating technology bound projects
+        </li>
+      </ul>
+      <p>
+        I think these are symptoms of a philosophical problem that have expanded
+        our concept of a tool to outside what's necessary. Don't get me wrong, I
+        can recognize that these tools are useful, but I don't see these tools
+        offering an order of magnituded greater level of capabilities than
+        terminal based editors that are much more narrow in functionality and
+        closer to the action in the shell that is UNIX&trade;-like operating
+        system's heart.
+      </p>
+      <p>
+        As trial and experience have smoothed my rough edges as a programmer,
+        i've noticed that my personal outlook on coding projects has also
+        started to become very terminal oriented:
+      </p>
+      <ul>
+        <li>
+          if you can't express your project build in a makefile, you are
+          probably recreating the wheel or using a tool of someone else who has
+          recreated the wheel
+        </li>
+        <li>
+          if you need feedback on the state of your code, file observation and
+          terminal output is as concise as it gets.
+        </li>
+        <li>
+          if feedback becomes overwhelming, create new terminal tabs or split
+          your terminal up into a dashboard with
+          <a href="https://github.com/tmux/tmux">tmux</a>
+        </li>
+        <li>
+          appropriate use of terminal text color is beautiful for signalling
+          attention
+        </li>
+        <li>a text editor should be a simple tool that triggers this system</li>
+      </ul>
+      <p>
+        The types of concerns I think should be relegated to a text editor are
+        rather few:
+      </p>
+      <ul>
+        <li>How do I navigate a collection of files easily</li>
+        <li>How do I see the structure of my code easily</li>
+        <li>How do I type my code correctly</li>
+        <li>Search and replacing text well</li>
+      </ul>
+      <p>
+        For VIM in particular I have found these tools exceptionally useful:
+      </p>
+      <ul>
+        <li>
+          <a href="https://github.com/junegunn/vim-plug">Plug</a> - A plugin
+          system for VIM
+        </li>
+        <li>
+          <a href="https://vimawesome.com/plugin/mru-vim">MRU</a> - a tool for
+          jumping to a most recently used file quickly
+        </li>
+        <li>
+          <a href="https://vimawesome.com/plugin/fzf">FZF</a> - fuzzy search
+          your current directory of files for any file containing a text
+        </li>
+        <li>
+          <a href="https://vimawesome.com/plugin/vimcompletesme"
+            >VIMCompletesMe</a
+          >
+          - an autocomplete script with few dependencies
+        </li>
+        <li>
+          <a href="https://vimawesome.com/plugin/nerdtree-red">NerdTree</a> -
+          show your current directory of files
+        </li>
+        <li>
+          <a href="https://vimawesome.com/plugin/vim-prettier">Prettifier</a> -
+          format a large variety of file types easily
+        </li>
+      </ul>
+      <p>
+        I have been able to leave GUI editors behind for this set of
+        functionality fairly painlessly. This article isn't meant as a rallying
+        cry to destroy all GUI editors, its simply a challenge for you to
+        explore how you use UNIX&trade;-like operating systems. Being closer to
+        how the system was meant to be used allowed me to write this whole
+        article and publish it to to servers without leaving a single window
+        using many apps that make no assumptions on who is using them. The real
+        tasks that we use machines for are complex and varied, and we should
+        question any tool that tries to lock us down into one way of doing
+        things even if the chains do look pretty. On the final point of
+        aesthetics. I recognize the power of being surrounded by beautiful
+        symbols that encourage what we do. Before I leave I offer a few
+        suggestions people to take a look at to spruce up their terminal
+        experience:
+      </p>
+      <ul>
+        <li>
+          <a href="https://github.com/Swordfish90/cool-retro-term"
+            >Cool Retro Term</a
+          >
+          - a fancy looking terminal for Linux
+        </li>
+        <li>
+          <a href="http://www.secretgeometry.com/apps/cathode/">Cathode</a> - a
+          fancy looking terminal for OSX
+        </li>
+        <li>
+          <a href="https://github.com/jwilm/alacritty/">Alacritty</a> - a GPU
+          accelerated terminal you can really feel the speed of
+        </li>
+        <li>
+          <a href="https://github.com/rafi/awesome-vim-colorschemes"
+            >Awesome VIM Themes</a
+          >
+          - a collection of VIM color themes
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
